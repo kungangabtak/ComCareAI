@@ -1,3 +1,4 @@
+// backend/index.js
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -25,8 +26,11 @@ app.post('/api/chatbot', async (req, res) => {
       'https://api.openai.com/v1/chat/completions',
       {
         model: 'gpt-3.5-turbo',
-	 messages: [
-          { role: 'system', content: 'You are a mental health support chatbot that is culturally sensitive and understanding towards communities of color. Respond to the following message appropriately:\n\n${userMessage}' },
+        messages: [
+          {
+            role: 'system',
+            content: `You are a mental health support chatbot that is culturally sensitive and understanding towards communities of color. Respond to the following message appropriately:\n\n${message}`,
+          },
           { role: 'user', content: message },
         ],
         max_tokens: 150,
