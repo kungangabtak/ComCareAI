@@ -26,7 +26,7 @@ app.post('/api/chatbot', async (req, res) => {
       {
         model: 'gpt-3.5-turbo',
 	 messages: [
-          { role: 'system', content: 'You are a supportive mental health assistant.' },
+          { role: 'system', content: 'You are a mental health support chatbot that is culturally sensitive and understanding towards communities of color. Respond to the following message appropriately:\n\n${userMessage}' },
           { role: 'user', content: message },
         ],
         max_tokens: 150,
