@@ -1,0 +1,11 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+
+body {
+  @apply bg-blue-50 dark:bg-gray-800 transition-colors duration-300;
+}
